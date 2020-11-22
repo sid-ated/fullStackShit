@@ -1,3 +1,3 @@
-export const aisuggestUrl = 'https://disease-pred.herokuapp.com/';
+export const aisuggestUrl = 'https://cors-anywhere.herokuapp.com/https://disease-pred.herokuapp.com/';
 
 

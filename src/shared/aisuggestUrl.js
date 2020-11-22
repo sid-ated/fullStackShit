@@ -1,3 +1,3 @@
-export const aisuggestUrl = 'http://localhost:3000/';
+export const aisuggestUrl = 'https://disease-pred.herokuapp.com/';
 
 

@@ -3,6 +3,33 @@ import { baseUrl } from '../shared/baseUrl';
 import { authBaseUrl } from '../shared/authBaseUrl';
 import { aisuggestUrl } from '../shared/aisuggestUrl';
 
+export const fetchDisease = (temp) => (dispatch) => {
+  
+  return fetch(aisuggestUrl + 'disease_predictor_model', {
+      method: "POST",
+      body: JSON.stringify(temp),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      //credentials: "same-origin"
+  })
+  .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        var error = new Error('Error ' + response.status + ': ' + response.statusText);
+        error.response = response;
+        throw error;
+      }
+    },
+    error => {
+          throw error;
+    })
+  .then(response => response.json())
+  .then(response => alert('You might have: ' + response + ', please consult a doctor'))
+  .catch(error =>  { console.log('disease predicted', error.message); alert('Your disease could not be predicted\nError: '+error.message); });
+};
+
 export const fetchMedicine = () => (dispatch) => {
 
     dispatch(medicinesLoading(true));

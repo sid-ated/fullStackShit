@@ -7,7 +7,7 @@ import Footer from './Footer/FooterComponent';
 import AiSuggest from './AIsuggest/AiSuggestComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchMedicine, fetchComments, fetchSymptoms, loginUser, logoutUser, registerUser } from '../redux/ActionCreator';
+import { fetchMedicine, fetchComments, fetchSymptoms, loginUser, logoutUser, registerUser, fetchDisease } from '../redux/ActionCreator';
 //import { actions } from 'react-redux-form';
 
 const mapStateToProps = state =>{
@@ -26,6 +26,7 @@ const mapDispatchToProps = dispatch => ({
   loginUser: (creds) => dispatch(loginUser(creds)),
   logoutUser: () => dispatch(logoutUser()),
   registerUser: (creds) => dispatch(registerUser(creds)),
+  fetchDisease:  (temp) => { dispatch(fetchDisease(temp))},
 }); 
 
 
@@ -76,7 +77,9 @@ class Main extends Component {
                                                                 registerUser={this.props.registerUser}
                                                                 auth={this.props.auth} />} />
               <Route exact path = "/aisuggest" component = {() => <AiSuggest
-                                                                  symptomList={this.props.symptoms.symptoms}/>}/>
+                                                                  symptomList={this.props.symptoms.symptoms}
+                                                                  fetchDisease={this.props.fetchDisease}
+                                                                  />}/>
               <PrivateRoute exact path ="/payment" component={() => <Payment/>} />
               <Redirect to="/home" />
               

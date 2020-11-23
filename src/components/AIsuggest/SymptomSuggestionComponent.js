@@ -37,6 +37,7 @@ class SymptomText extends Component {
 
  handleInputChange = (e) => {
    const value = e.target.value;
+   //this.props.handleChange(value, this.props.id);
     this.setState({
       searchText: value
     }, () => {
@@ -50,17 +51,18 @@ class SymptomText extends Component {
       }
     })
   }
-
+  
+/*
   handleSearchSubmit = () => {
     alert("I am working");
-  }
+  }*/
 
-  suggestionsSelected (value) {
+  suggestionsSelected (value, id) {
     this.setState({
       searchText: value,
       results: []
     });
-    
+    this.props.handleChange(value, id);
   }
   
 
@@ -69,7 +71,7 @@ class SymptomText extends Component {
   const Suggestions = (props) => {
     let options;
       options = props.results.map(r => (
-        <li key={r} onClick={() => this.suggestionsSelected(r)}>
+        <li key={r} onClick={() => this.suggestionsSelected(r, this.props.id)}>
           {r}
         </li>
     ))
@@ -85,6 +87,7 @@ class SymptomText extends Component {
             onClick={this.handleInputChange}
             value={this.state.searchText}
             type="text"
+            name = {this.props.id}
             placeholder= {this.props.id}
             className="m-auto"
             size="sm"

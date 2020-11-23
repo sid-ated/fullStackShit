@@ -5,6 +5,7 @@ import Registration from './Users/UserRegComponent.js';
 import Header from './Header/HeaderComponent.js';
 import Footer from './Footer/FooterComponent';
 import AiSuggest from './AIsuggest/AiSuggestComponent';
+import AboutUs from './AboutUs/AboutUsComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchMedicine, fetchComments, fetchSymptoms, loginUser, logoutUser, registerUser, fetchDisease } from '../redux/ActionCreator';
@@ -80,6 +81,7 @@ class Main extends Component {
                                                                   symptomList={this.props.symptoms.symptoms}
                                                                   fetchDisease={this.props.fetchDisease}
                                                                   />}/>
+              <Route exact path ="/aboutus" component = {() => <AboutUs/>} />                              
               <PrivateRoute exact path ="/payment" component={() => <Payment/>} />
               <Redirect to="/home" />
               

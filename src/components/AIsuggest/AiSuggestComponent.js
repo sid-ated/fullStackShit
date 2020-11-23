@@ -41,14 +41,12 @@ class AiSuggest extends Component{
 	       	this.state.Symptom10
 	       ];
 	       this.props.fetchDisease(temp);
-	       /*
 	 	for(var i=1; i<=10; i++){
 	 	    var temp = "Symptom"+i;
 	 	    this.setState({
 	 	    	[temp]: ""
 	 	    });
 	 	}
-	 	*/
 	}
     render(){
         return(

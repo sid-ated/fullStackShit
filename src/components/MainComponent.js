@@ -6,6 +6,11 @@ import Header from './Header/HeaderComponent.js';
 import Footer from './Footer/FooterComponent';
 import AiSuggest from './AIsuggest/AiSuggestComponent';
 import AboutUs from './AboutUs/AboutUsComponent';
+import Feedback from './AIsuggest/FeedbackComponent';
+import Chatbot from './ChatBox/ChatComponent';
+import MedicalStore from './MedicalStore/AllMedicinesComponent';
+import ContactUs from './ContactUs/ContactUsComponent';
+import Articles from './Articles/ArticleComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchMedicine, fetchComments, fetchSymptoms, loginUser, logoutUser, registerUser, fetchDisease } from '../redux/ActionCreator';
@@ -81,7 +86,12 @@ class Main extends Component {
                                                                   symptomList={this.props.symptoms.symptoms}
                                                                   fetchDisease={this.props.fetchDisease}
                                                                   />}/>
-              <Route exact path ="/aboutus" component = {() => <AboutUs/>} />                              
+              <Route exact path ="/aboutus" component = {() => <AboutUs/>} />    
+              <Route exact path ="/feedback" component = {() => <Feedback/>} />   
+              <Route exact path ="/chatbot" component = {() => <Chatbot/>} />  
+              <Route exact path ="/medical_store" component = {() => <MedicalStore/>} /> 
+              <Route exact path ="/articles" component = {() => <Articles/>} />    
+              <Route exact path ="/contactus" component = {() => <ContactUs/>} />                        
               <PrivateRoute exact path ="/payment" component={() => <Payment/>} />
               <Redirect to="/home" />
               

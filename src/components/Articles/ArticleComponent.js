@@ -2,7 +2,7 @@ import React , {Component} from 'react';
 import {Button} from 'reactstrap';
 import {Link} from 'react-router-dom';
 
-class AboutUs extends Component{
+class Articles extends Component{
     render(){
         return(
             <div>
@@ -13,4 +13,4 @@ class AboutUs extends Component{
     }
 }
 
-export default AboutUs;
+export default Articles;

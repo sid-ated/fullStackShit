@@ -118,13 +118,13 @@ class Header extends Component {
                                 </NavItem>
 
                                 <NavItem className="m-auto">
-                                    <NavLink className="nav-link" to="/" style={{ color: '#12A28C', fontSize: 14}}>
+                                    <NavLink className="nav-link" to="/medical_store" style={{ color: '#12A28C', fontSize: 14}}>
                                         <span><FaHospitalAlt size="19"/> Medical Store</span> 
                                     </NavLink>
                                 </NavItem>
 
                                 <NavItem className="m-auto">
-                                    <NavLink className="nav-link" to="/" style={{ color: '#12A28C', fontSize: 14}}>
+                                    <NavLink className="nav-link" to="/chatbot" style={{ color: '#12A28C', fontSize: 14}}>
                                         <IoMdChatbubbles size="19"/> Chat With Expert
                                     </NavLink>
                                 </NavItem>
@@ -144,14 +144,14 @@ class Header extends Component {
                                                 <Link to="/aisuggest" style={{ color: '#12A28C', fontSize: 14, textDecoration: 'none'  }}>Use AI-chemist</Link>
                                             </DropdownItem>
                                             <DropdownItem >
-                                                <Link to="/aifeedback" style={{ color: '#12A28C', fontSize: 14, textDecoration: 'none' }}> Rate AI-chemist</Link>
+                                                <Link to="/feedback" style={{ color: '#12A28C', fontSize: 14, textDecoration: 'none' }}> Rate AI-chemist</Link>
                                             </DropdownItem>
                                         </DropdownMenu>
                                     </UncontrolledDropdown>
                                 </NavItem>
 
                                 <NavItem className="m-auto">
-                                    <NavLink className="nav-link" to="/" style={{ color: '#12A28C', fontSize: 14}}>
+                                    <NavLink className="nav-link" to="/articles" style={{ color: '#12A28C', fontSize: 14}}>
                                         <span><FaBookReader size="19" /> Articles</span>
                                     </NavLink>
                                 </NavItem>
@@ -279,9 +279,6 @@ class Header extends Component {
 
                     </ModalBody>
                 </Modal>
-                <div className="prescription">
-                    <p><FaPrescription/> Upload a prescription</p>
-                </div>
             </>
         );
 

@@ -15,6 +15,12 @@ class SymptomText extends Component {
  componentWillUnmount () {
   document.removeEventListener('mousedown', this.handleClick, false);
  }
+ 
+ clearAllValues = () => {
+   this.setState({
+      searchText: ''
+   })
+ }
 
  handleClick = (e) => {
    if(!this.node.contains(e.target)) {

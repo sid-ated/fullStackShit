@@ -1,5 +1,5 @@
-import React from 'react';
-mport {Button} from 'reactstrap';
+import {React, Component} from 'react';
+import {Button} from 'reactstrap';
 
 class Payment extends Component{
     render(){

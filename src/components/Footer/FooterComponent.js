@@ -40,6 +40,7 @@ function Footer (props){
                 <div className="row justify-content-center">             
                     <div className="col-auto">
                         <p>© Copyright 2020 aichemist</p>
+                        <p>Created by Siddhartha and Robin</p>
                     </div>
                 </div>
             </div>

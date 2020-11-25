@@ -1,11 +1,15 @@
 import React from 'react';
+mport {Button} from 'reactstrap';
 
-function Payment (){
-    return (
-        <div>
-            <h1>This is payment page.</h1> 
-        </div>
-    );
+class Payment extends Component{
+    render(){
+        return(
+            <div>
+                <p> Make the payment with Razorpay.</p>
+                <Button color="primary">Pay</Button>
+            </div>
+        );
+    }
 }
 
 export default Payment;

@@ -11,7 +11,7 @@ class Registration extends Component {
     }
 
     handleRegister(event){
-        this.props.registerUser({username: this.username.value, password: this.password.value});
+        this.props.registerUser({id: this.id.value, username: this.username.value, password: this.password.value, isAdmin: false});
         event.preventDefault();
     }
 
@@ -21,6 +21,12 @@ class Registration extends Component {
                 {!this.props.auth.isAuthenticated ?
                 <div>
                     <Form onSubmit={this.handleRegister}>
+                       <FormGroup>
+                            <Label htmlFor="id">Id</Label>
+                            <Input type="text" id="id" name="id"
+                                    innerRef={(input)=>this.id=input}/>
+                        </FormGroup>
+                        
                         <FormGroup>
                             <Label htmlFor="username">Username</Label>
                             <Input type="text" id="username" name="username"

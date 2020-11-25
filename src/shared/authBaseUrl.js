@@ -1,2 +1,2 @@
 
-export const authBaseUrl = 'http://localhost:3002/';
+export const authBaseUrl = 'https://cors-anywhere.herokuapp.com/https://aichemist-server.herokuapp.com/';

@@ -21,12 +21,6 @@ class Registration extends Component {
                 {!this.props.auth.isAuthenticated ?
                 <div>
                     <Form onSubmit={this.handleRegister}>
-                       <FormGroup>
-                            <Label htmlFor="id">Id</Label>
-                            <Input type="text" id="id" name="id"
-                                    innerRef={(input)=>this.id=input}/>
-                        </FormGroup>
-                        
                         <FormGroup>
                             <Label htmlFor="username">Username</Label>
                             <Input type="text" id="username" name="username"

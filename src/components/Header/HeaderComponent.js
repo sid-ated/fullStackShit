@@ -2,6 +2,7 @@ import React , {Component} from 'react';
 import {Link} from 'react-router-dom';
 import './Header.css';
 import Search from './SearchComponent';
+import FacebookButton from './../UtilComp/FacebookButtonComponent';
 import { FaHospitalAlt, FaClinicMedical, FaBookReader, FaPrescription } from 'react-icons/fa';
 import {MdMoreVert} from 'react-icons/md';
 import {TiShoppingCart } from 'react-icons/ti';
@@ -99,7 +100,7 @@ class Header extends Component {
     render() {
         return (
             <>
-                <Navbar dark fixed="top" expand="md" className="mynav">
+                <Navbar collapseOnSelectdark fixed="top" expand="md" className="mynav">
                     <div className="container-fluid">
                         
                         <NavbarToggler onClick={this.toggleNav}/>
@@ -110,7 +111,7 @@ class Header extends Component {
                     
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             
-                            <Nav navbar>
+                            <Nav navbar className="mx-auto order-0">
                                 <NavItem className="m-auto">
                                     <NavLink className="nav-link" to="/home" style={{ color: '#12A28C', fontSize: 14}}>
                                         <FaClinicMedical size="19"/> Home
@@ -176,10 +177,6 @@ class Header extends Component {
                                         </DropdownMenu>
                                     </UncontrolledDropdown>
                                 </NavItem>
-                            </Nav>
-                            
-                            
-                            <Nav  navbar className="ml-auto">
                                 <NavItem className="m-auto">
                                     <Search
                                     medicine = {this.props.medicine}
@@ -187,18 +184,19 @@ class Header extends Component {
                                 </NavItem>
 
                                 
-                                <NavItem className="mr-2 mt-1">
+                                <NavItem className="m-auto">
                                     <NavLink className="nav-link" to="/"  style={{ color: '#12A28C', fontSize: 14}}>
                                         <Link to ="/yourCart" style={{ color: '#12A28C', textDecoration: 'none'}}> <TiShoppingCart size="28" color='#12A28C'/> Cart </Link>
                                     </NavLink>
                                 </NavItem>
                                 
 
-                                <NavItem className="m-auto" >
+                                <NavItem className="ml-3" >
 
                                     { !this.props.auth.isAuthenticated ?
-                                    <div>
-                                        <div className="navbar-text mr-3" style={{ color: '#12A28C', fontSize: 14}}>Welcome, Guest!</div>
+                                      <div >
+                                        <div className="navbar-text mr-2" style={{ color: '#12A28C', fontSize: 14}}>Welcome, Guest!</div>
+                                        <div className="ml-2">
                                         <Button outline onClick={this.toggleModal} size="sm" style={{ backgroundColor: '#12A28C', color: 'white'}}>
                                             <span className="fa fa-sign-in fa-lg" style={{ color: 'white' }}></span> Login
                                             {this.props.auth.isFetching ?
@@ -206,19 +204,22 @@ class Header extends Component {
                                                 : null
                                             }
                                         </Button>
-                                    </div>
+                                        </div>
+                                      </div>
                                     :
-                                    <div>
-                                        <div className="navbar-text mr-3" style={{ color: '#12A28C', fontSize: 14 }}> 
+                                    <div className="m-auto">
+                                        <div className="navbar-text m-auto" style={{ color: '#12A28C', fontSize: 14}}> 
                                         	<Link to ="/user/userProfile" style={{ color: '#12A28C'}}> Welcome, {this.props.auth.user.username}! </Link>
                                         </div>
-                                        <Button outline onClick={this.handleLogout} size="sm" style={{ backgroundColor: '#12A28C ', color: 'white' }}>
-                                            <span className="fa fa-sign-out fa-lg" style={{ color: 'white' }}></span> Logout
-                                            {this.props.auth.isFetching ?
-                                                <span className="fa fa-spinner fa-pulse fa-fw"></span>
-                                                : null
-                                            }
-                                        </Button>
+                                        <div className="m-auto">
+		                                <Button outline onClick={this.handleLogout} size="sm" style={{ backgroundColor: '#12A28C ', color: 'white' }}>
+		                                    <span className="fa fa-sign-out fa-lg" style={{ color: 'white' }}></span> Logout
+		                                    {this.props.auth.isFetching ?
+		                                        <span className="fa fa-spinner fa-pulse fa-fw"></span>
+		                                        : null
+		                                    }
+		                                </Button>
+                                        </div>
                                     </div>
                                     }
 
@@ -264,13 +265,11 @@ class Header extends Component {
                             <FormGroup>
                                 <Button type="submit" value="submit" className="bg-primary" mt-2>Login</Button>
                             </FormGroup>
-                            
-                            <FormGroup>
-                                <p style = {{fontSize: 15}}>Sign in with Google</p> 
-                            </FormGroup>
+                   
 
                             <FormGroup>
-                                <p style = {{fontSize: 15}}>Sign in with Facebook</p> 
+                                <p onClick={this.toggleModal}> <FacebookButton loginUser = {this.props.loginUser}
+                                						  registerUser={this.props.registerUser}/> </p>
                             </FormGroup>
 
                             <FormGroup>

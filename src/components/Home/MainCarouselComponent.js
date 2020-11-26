@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel'
-import { databaseUrl } from '../../shared/databaseUrl';
+import { imageUrl } from '../../shared/imageUrl';
 import { Loading } from '../UtilComp/LoadingComponent';
  
 function MainCarousel(props) {
@@ -14,7 +14,7 @@ function MainCarousel(props) {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={databaseUrl + item.image}
+            src={imageUrl + item.image}
             alt="First slide"
             width="400"
             height="200"

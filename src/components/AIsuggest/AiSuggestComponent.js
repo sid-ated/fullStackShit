@@ -55,37 +55,37 @@ class AiSuggest extends Component{
                 	<p> Please type your symptoms and select from the suggestions shown. Then click on predict disease button. For better results fill all the 10 fields. Your result will be propmpted shortly after that.</p>
                 </div>
                
-                <div className="mt-2 mb-2 col-12">
+                <div className="mt-2 mb-2 col-12" style={{zIndex:10}}>
                 	<SymptomText symptoms = {this.props.symptomList} id={1} handleChange={this.handleInputChange}/>
                 </div>
-                <div className="mt-2 mb-2 col-12">
+                <div className="mt-2 mb-2 col-12" style={{zIndex:9}}>
                 	<SymptomText symptoms = {this.props.symptomList} id={2} handleChange={this.handleInputChange}/>
                 </div>
-                <div className="mt-2 mb-2 col-12">
+                <div className="mt-2 mb-2 col-12" style={{zIndex:8}}>
                 	<SymptomText symptoms = {this.props.symptomList} id={3} handleChange={this.handleInputChange}/>
                 </div>
-                <div className="mt-2 mb-2 col-12">
+                <div className="mt-2 mb-2 col-12" style={{zIndex:7}}>
                 	<SymptomText symptoms = {this.props.symptomList} id={4} handleChange={this.handleInputChange}/>
                 </div>
-                <div className="mt-2 mb-2 col-12">
+                <div className="mt-2 mb-2 col-12" style={{zIndex:6}}>
                 	 <SymptomText symptoms = {this.props.symptomList} id={5} handleChange={this.handleInputChange}/>
                 </div>
-                <div className="mt-2 mb-2 col-12">
+                <div className="mt-2 mb-2 col-12" style={{zIndex:5}}>
                 	<SymptomText symptoms = {this.props.symptomList} id={6} handleChange={this.handleInputChange}/>
                 </div>
-                <div className="mt-2 mb-2 col-12">
+                <div className="mt-2 mb-2 col-12" style={{zIndex:4}}>
                 	<SymptomText symptoms = {this.props.symptomList} id={7} handleChange={this.handleInputChange}/>
                 </div>
-                <div className="mt-2 mb-2 col-12">
+                <div className="mt-2 mb-2 col-12 style={{zIndex:3}}">
                 	<SymptomText symptoms = {this.props.symptomList} id={8} handleChange={this.handleInputChange}/>
                 </div>
-                <div className="mt-2 mb-2 col-12">
+                <div className="mt-2 mb-2 col-12" style={{zIndex:2}}>
                 	<SymptomText symptoms = {this.props.symptomList} id={9} handleChange={this.handleInputChange}/>
                 </div>
-                <div className="mt-2 mb-2 col-12">
+                <div className="mt-2 mb-2 col-12" style={{zIndex:1}}>
                 	<SymptomText symptoms = {this.props.symptomList} id={10} handleChange={this.handleInputChange}/>
                 </div>
-                <div className="mt-2 mb-2 col-12">
+                <div className="mt-2 mb-2 col-12" style={{zIndex:0}}>
                 	<Button onClick={this.getDisease} color="primary">Predict Disease</Button>
                 </div>
                

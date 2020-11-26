@@ -1,12 +1,11 @@
-import {React, Component} from 'react';
-import {Button} from 'reactstrap';
-
+import React, {Component} from 'react';
+import PayApp from './PayApp';
 class Payment extends Component{
     render(){
         return(
             <div>
                 <p> Make the payment with Razorpay.</p>
-                <Button color="primary">Pay</Button>
+                <PayApp auth={this.props.auth}/>
             </div>
         );
     }

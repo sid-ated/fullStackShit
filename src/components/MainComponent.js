@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Home from './Home/HomeComponent';
 import Payment from './UtilComp/PaymentComponent';
 import Registration from './Users/UserRegComponent.js';
+import UserProfile from './Users/UserProfileComponent.js';
 import Header from './Header/HeaderComponent.js';
 import Footer from './Footer/FooterComponent';
 import AiSuggest from './AIsuggest/AiSuggestComponent';
@@ -11,6 +12,7 @@ import Chatbot from './ChatBox/ChatComponent';
 import MedicalStore from './MedicalStore/AllMedicinesComponent';
 import ContactUs from './ContactUs/ContactUsComponent';
 import Articles from './Articles/ArticleComponent';
+import Cart from './Cart/CartComponent';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchMedicine, fetchComments, fetchSymptoms, loginUser, logoutUser, registerUser, fetchDisease } from '../redux/ActionCreator';
@@ -91,8 +93,10 @@ class Main extends Component {
               <Route exact path ="/chatbot" component = {() => <Chatbot/>} />  
               <Route exact path ="/medical_store" component = {() => <MedicalStore/>} /> 
               <Route exact path ="/articles" component = {() => <Articles/>} />    
-              <Route exact path ="/contactus" component = {() => <ContactUs/>} />                        
-              <PrivateRoute exact path ="/payment" component={() => <Payment/>} />
+              <Route exact path ="/contactus" component = {() => <ContactUs/>} />                       
+              <PrivateRoute exact path ="/payment" component={() => <Payment auth={this.props.auth}/>} />
+              <PrivateRoute exact path ="/yourCart" component={() => <Cart auth={this.props.auth}/>} />
+              <PrivateRoute exact path ="/user/userProfile" component={() => <UserProfile auth={this.props.auth}/>} />
               <Redirect to="/home" />
               
             </Switch>

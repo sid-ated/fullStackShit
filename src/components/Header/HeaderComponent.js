@@ -189,7 +189,7 @@ class Header extends Component {
                                 
                                 <NavItem className="mr-2 mt-1">
                                     <NavLink className="nav-link" to="/"  style={{ color: '#12A28C', fontSize: 14}}>
-                                        <TiShoppingCart size="28" color='#12A28C'/> Cart
+                                        <Link to ="/yourCart" style={{ color: '#12A28C', textDecoration: 'none'}}> <TiShoppingCart size="28" color='#12A28C'/> Cart </Link>
                                     </NavLink>
                                 </NavItem>
                                 
@@ -209,7 +209,9 @@ class Header extends Component {
                                     </div>
                                     :
                                     <div>
-                                        <div className="navbar-text mr-3" style={{ color: '#12A28C', fontSize: 14 }}>Welcome, {this.props.auth.user.username}!</div>
+                                        <div className="navbar-text mr-3" style={{ color: '#12A28C', fontSize: 14 }}> 
+                                        	<Link to ="/user/userProfile" style={{ color: '#12A28C'}}> Welcome, {this.props.auth.user.username}! </Link>
+                                        </div>
                                         <Button outline onClick={this.handleLogout} size="sm" style={{ backgroundColor: '#12A28C ', color: 'white' }}>
                                             <span className="fa fa-sign-out fa-lg" style={{ color: 'white' }}></span> Logout
                                             {this.props.auth.isFetching ?
@@ -284,4 +286,5 @@ class Header extends Component {
 
     }
 }
+
 export default Header ;

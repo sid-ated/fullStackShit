@@ -1,7 +1,7 @@
 import * as ActionTypes from './ActionTypes';
-import { baseUrl } from '../shared/baseUrl';
 import { authBaseUrl } from '../shared/authBaseUrl';
 import { aisuggestUrl } from '../shared/aisuggestUrl';
+import { databaseUrl } from '../shared/databaseUrl';
 
 export const fetchDisease = (temp) => (dispatch) => {
   
@@ -34,7 +34,7 @@ export const fetchMedicine = () => (dispatch) => {
 
     dispatch(medicinesLoading(true));
 
-    return fetch(baseUrl + 'medicines')
+    return fetch(databaseUrl + 'medicines')
     .then(response => {
         if (response.ok) {
           return response;
@@ -99,7 +99,7 @@ export const addSymptoms = (symptoms) => ({
 });
 
 export const fetchComments = () => (dispatch) => {    
-    return fetch(baseUrl + 'comments')
+    return fetch(databaseUrl + 'comments')
     .then(response => {
         if (response.ok) {
           return response;
@@ -216,7 +216,7 @@ export const registerUser = (creds) => (dispatch) => {
   // We dispatch requestLogin to kickoff the call to the API
   dispatch(requestRegistration(creds))
 
-  return fetch(authBaseUrl + 'users', {
+  return fetch(databaseUrl + 'users', {
       method: 'POST',
       headers: { 
           'Content-Type':'application/json' 

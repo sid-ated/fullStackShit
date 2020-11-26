@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Container, 
     Row, Col, CardLink, Button, CardGroup, CardDeck, Collapse} from 'reactstrap';
 import { Loading } from '../UtilComp/LoadingComponent';
-import { baseUrl } from '../../shared/baseUrl';
+import { databaseUrl } from '../../shared/databaseUrl';
 import {MdAddShoppingCart} from 'react-icons/md';
 
 function TopProducts (props){
@@ -17,7 +17,7 @@ function TopProducts (props){
         columns.push(
             <Col md="3">
                 <Card className="mycard">
-                <CardImg src={baseUrl + item.image} width="50%" alt={item.name} />
+                <CardImg src={databaseUrl + item.image} width="50%" alt={item.name} />
                 <CardBody>
                     <CardTitle>{item.name}</CardTitle>
                     {item.designation ? <CardSubtitle>{item.designation}</CardSubtitle> : null }

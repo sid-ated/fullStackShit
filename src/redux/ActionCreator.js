@@ -216,7 +216,7 @@ export const registerUser = (creds) => (dispatch) => {
   // We dispatch requestLogin to kickoff the call to the API
   dispatch(requestRegistration(creds))
 
-  return fetch(databaseUrl + 'users', {
+  return fetch(authBaseUrl + 'register', {
       method: 'POST',
       headers: { 
           'Content-Type':'application/json' 

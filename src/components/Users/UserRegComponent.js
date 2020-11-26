@@ -11,7 +11,7 @@ class Registration extends Component {
     }
 
     handleRegister(event){
-        this.props.registerUser({id: this.id.value, username: this.username.value, password: this.password.value, isAdmin: false});
+        this.props.registerUser({username: this.username.value, password: this.password.value});
         event.preventDefault();
     }
 
